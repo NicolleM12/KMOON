@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UsuarioActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/blank"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/image" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/et_nombreC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="45dp"
+                    android:ems="10"
+                    android:fontFamily="monospace"
+                    android:hint="Nombre"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/et_correoC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="45dp"
+                    android:ems="10"
+                    android:fontFamily="monospace"
+                    android:hint="Correo"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_nombreC" />
+
+                <EditText
+                    android:id="@+id/et_conC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="45dp"
+                    android:ems="10"
+                    android:fontFamily="monospace"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_correoC" />
+
+                <Button
+                    android:id="@+id/btn_guardar"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="32dp"
+                    android:backgroundTint="@color/darkgray"
+                    android:fontFamily="monospace"
+                    android:onClick="guardar"
+                    android:text="Guardar"
+                    android:textColor="@color/blank"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_conC" />
+
+                <Button
+                    android:id="@+id/btn_buscar"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginBottom="37dp"
+                    android:backgroundTint="@color/darkgray"
+                    android:fontFamily="monospace"
+                    android:onClick="consultar"
+                    android:text="Buscar"
+                    android:textColor="@color/blank"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_eliminar"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="23dp"
+                    android:backgroundTint="@color/darkgray"
+                    android:fontFamily="monospace"
+                    android:onClick="eliminar"
+                    android:text="Eliminar"
+                    android:textColor="@color/blank"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_guardar" />
+
+                <Button
+                    android:id="@+id/btn_actualizar"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="35dp"
+                    android:backgroundTint="@color/darkgray"
+                    android:fontFamily="monospace"
+                    android:onClick="actualizar"
+                    android:text="Actualizar"
+                    android:textColor="@color/blank"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_conC" />
+
+                <Button
+                    android:id="@+id/btn_limpiar"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginEnd="35dp"
+                    android:backgroundTint="@color/darkgray"
+                    android:fontFamily="monospace"
+                    android:onClick="limpiarCampos"
+                    android:text="Cancelar"
+                    android:textColor="@color/blank"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_actualizar" />
+
+                <Button
+                    android:id="@+id/btn_listar"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="37dp"
+                    android:backgroundTint="@color/darkgray"
+                    android:fontFamily="monospace"
+                    android:onClick="listaUs"
+                    android:text="Listar"
+                    android:textColor="@color/blank"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="12"
+        android:background="@color/blank"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="11"
+            android:background="@color/gray"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/blank"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/blank"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_tienda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="goToStore"
+                    app:srcCompat="@drawable/imagecarr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/blank"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="goToProfile"
+                    app:srcCompat="@drawable/imageper" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
